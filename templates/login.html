@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Título de la Página</title>
+</head>
+<body>
+    <h1>¡Hola Mundo!</h1>
+    <p>Este es el contenido visible.</p>
+    {% block content %}
+    	<form method="post">
+		<div>
+			<input type="text" name="user" placeholder="user">
+		</div>
+		<div>
+			<input type="password" name="password" placeholder="Password">
+		</div>
+		<div>
+			<button>sign up</button>
+		</div>
+    	</form>
+    {% endblock %}
+</body>
+</html>
+
