@@ -630,3 +630,304 @@
 08:54:43 PM: INFO [_internal.py:97] 127.0.0.1 - - [23/Feb/2026 20:54:43] "GET / HTTP/1.1" 200 -
 08:54:43 PM: INFO [_internal.py:97] 127.0.0.1 - - [23/Feb/2026 20:54:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
 08:54:43 PM: INFO [_internal.py:97] 127.0.0.1 - - [23/Feb/2026 20:54:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:22:17 PM: INFO [app.py:152] 🚀 === MILITECH CORPORATION INICIADO ===
+12:22:17 PM: INFO [app.py:153] 👉 PRIMERA VEZ: visita http://localhost:5000/init_db para crear la DB
+12:22:17 PM: INFO [app.py:154] Usuarios: soldado/123, sargento/123
+12:22:17 PM: INFO [_internal.py:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.0.6:5000
+12:22:17 PM: INFO [_internal.py:97] [33mPress CTRL+C to quit[0m
+12:22:17 PM: INFO [_internal.py:97]  * Restarting with stat
+12:22:18 PM: INFO [app.py:152] 🚀 === MILITECH CORPORATION INICIADO ===
+12:22:18 PM: INFO [app.py:153] 👉 PRIMERA VEZ: visita http://localhost:5000/init_db para crear la DB
+12:22:18 PM: INFO [app.py:154] Usuarios: soldado/123, sargento/123
+12:22:18 PM: WARNING [_internal.py:97]  * Debugger is active!
+12:22:18 PM: INFO [_internal.py:97]  * Debugger PIN: 129-694-163
+12:22:25 PM: INFO [app.py:98] → Página principal
+12:22:25 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:25] "GET / HTTP/1.1" 200 -
+12:22:25 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:22:25 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:22:27 PM: INFO [app.py:104] → Login page
+12:22:27 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:27] "GET /login HTTP/1.1" 200 -
+12:22:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:22:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:22:34 PM: INFO [app.py:104] → Login page
+12:22:34 PM: INFO [app.py:110] Login intento: soldado
+12:22:34 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:34] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+12:22:35 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:35] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+12:22:35 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:35] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+12:22:35 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:35] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=wMLm5I4gK8ZwrWgNWZ9l HTTP/1.1" 200 -
+12:22:35 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:22:35] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+12:23:49 PM: INFO [app.py:81] → Inicializando base de datos SQLite
+12:23:49 PM: INFO [app.py:89] ✅ Usuarios iniciales creados en la DB
+12:23:49 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:23:49] "GET /init_db HTTP/1.1" 200 -
+12:23:56 PM: INFO [app.py:104] → Login page
+12:23:56 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:23:56] "GET /login HTTP/1.1" 200 -
+12:23:56 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:23:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:24:02 PM: INFO [app.py:104] → Login page
+12:24:02 PM: INFO [app.py:110] Login intento: soldado
+12:24:02 PM: INFO [app.py:116] ✅ LOGIN OK: Soldado Raso (Rango 1)
+12:24:02 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+12:24:02 PM: INFO [app.py:48] load_user llamado para: soldado
+12:24:02 PM: INFO [app.py:128] → Dashboard: Soldado Raso
+12:24:02 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:02] "GET /dashboard HTTP/1.1" 200 -
+12:24:02 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:24:03 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:24:28 PM: INFO [app.py:48] load_user llamado para: soldado
+12:24:28 PM: INFO [app.py:146] → Logout: Soldado Raso
+12:24:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:28] "[32mGET /logout HTTP/1.1[0m" 302 -
+12:24:28 PM: INFO [app.py:98] → Página principal
+12:24:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:28] "GET / HTTP/1.1" 200 -
+12:24:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:24:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:24:30 PM: INFO [app.py:104] → Login page
+12:24:30 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:30] "GET /login HTTP/1.1" 200 -
+12:24:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:24:37 PM: INFO [app.py:104] → Login page
+12:24:37 PM: INFO [app.py:110] Login intento: sargento
+12:24:37 PM: INFO [app.py:116] ✅ LOGIN OK: Sargento Primero (Rango 2)
+12:24:37 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+12:24:37 PM: INFO [app.py:48] load_user llamado para: sargento
+12:24:37 PM: INFO [app.py:128] → Dashboard: Sargento Primero
+12:24:37 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:37] "GET /dashboard HTTP/1.1" 200 -
+12:24:37 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:24:37 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:24:41 PM: INFO [app.py:48] load_user llamado para: sargento
+12:24:41 PM: INFO [app.py:146] → Logout: Sargento Primero
+12:24:41 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+12:24:41 PM: INFO [app.py:98] → Página principal
+12:24:41 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:41] "GET / HTTP/1.1" 200 -
+12:24:41 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:24:41 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:24:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:50:01 PM: INFO [app.py:152] 🚀 === MILITECH CORPORATION INICIADO ===
+12:50:01 PM: INFO [app.py:153] 👉 PRIMERA VEZ: visita http://localhost:5000/init_db para crear la DB
+12:50:01 PM: INFO [app.py:154] Usuarios: soldado/123, sargento/123
+12:50:01 PM: INFO [_internal.py:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.0.6:5000
+12:50:01 PM: INFO [_internal.py:97] [33mPress CTRL+C to quit[0m
+12:50:01 PM: INFO [_internal.py:97]  * Restarting with stat
+12:50:01 PM: INFO [app.py:152] 🚀 === MILITECH CORPORATION INICIADO ===
+12:50:01 PM: INFO [app.py:153] 👉 PRIMERA VEZ: visita http://localhost:5000/init_db para crear la DB
+12:50:01 PM: INFO [app.py:154] Usuarios: soldado/123, sargento/123
+12:50:01 PM: WARNING [_internal.py:97]  * Debugger is active!
+12:50:01 PM: INFO [_internal.py:97]  * Debugger PIN: 129-694-163
+12:50:07 PM: INFO [app.py:98] → Página principal
+12:50:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:07] "GET / HTTP/1.1" 200 -
+12:50:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:50:09 PM: INFO [app.py:104] → Login page
+12:50:09 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:09] "GET /login HTTP/1.1" 200 -
+12:50:10 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:50:17 PM: INFO [app.py:104] → Login page
+12:50:17 PM: INFO [app.py:110] Login intento: sargento
+12:50:17 PM: INFO [app.py:116] ✅ LOGIN OK: Sargento Primero (Rango 2)
+12:50:17 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+12:50:18 PM: INFO [app.py:48] load_user llamado para: sargento
+12:50:18 PM: INFO [app.py:128] → Dashboard: Sargento Primero
+12:50:18 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:18] "GET /dashboard HTTP/1.1" 200 -
+12:50:18 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:50:18 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12:50:25 PM: INFO [app.py:48] load_user llamado para: sargento
+12:50:25 PM: INFO [app.py:61] Chequeo rango 1+ para sargento (rango 2)
+12:50:25 PM: INFO [app.py:134] → Zona Soldado: Sargento Primero
+12:50:25 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:25] "GET /soldado HTTP/1.1" 200 -
+12:50:25 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:25] "GET /static/css/styles.css HTTP/1.1" 200 -
+12:50:29 PM: INFO [app.py:48] load_user llamado para: sargento
+12:50:29 PM: INFO [app.py:128] → Dashboard: Sargento Primero
+12:50:29 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:29] "GET /dashboard HTTP/1.1" 200 -
+12:50:29 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:50:31 PM: INFO [app.py:48] load_user llamado para: sargento
+12:50:31 PM: INFO [app.py:146] → Logout: Sargento Primero
+12:50:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+12:50:31 PM: INFO [app.py:98] → Página principal
+12:50:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:31] "GET / HTTP/1.1" 200 -
+12:50:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+12:50:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 12:50:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:12:19 PM: INFO [_internal.py:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+03:12:19 PM: INFO [_internal.py:97] [33mPress CTRL+C to quit[0m
+03:12:22 PM: INFO [app.py:145] → Página principal
+03:12:22 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:22] "GET / HTTP/1.1" 200 -
+03:12:22 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:22] "GET /static/css/styles.css HTTP/1.1" 200 -
+03:12:24 PM: INFO [app.py:151] → Login page
+03:12:24 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:24] "GET /login HTTP/1.1" 200 -
+03:12:24 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:24] "GET /static/css/styles.css HTTP/1.1" 200 -
+03:12:31 PM: INFO [app.py:151] → Login page
+03:12:31 PM: INFO [app.py:157] Login intento: sargento
+03:12:31 PM: INFO [app.py:163] ✅ LOGIN OK: Sargento Primero (Rango 2)
+03:12:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+03:12:31 PM: INFO [app.py:49] load_user llamado para: sargento
+03:12:31 PM: INFO [app.py:175] → Dashboard: Sargento Primero
+03:12:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:31] "GET /dashboard HTTP/1.1" 200 -
+03:12:31 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:12:42 PM: INFO [app.py:49] load_user llamado para: sargento
+03:12:42 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:12:42 PM: ERROR [app.py:875] Exception on /admin [GET]
+Traceback (most recent call last):
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/app.py", line 67, in decorated_function
+    return f(*args, **kwargs)
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/app.py", line 110, in admin
+    return render_template("admin.html", usuarios=usuarios, total_usuarios=len(usuarios), user=current_user)
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/rpjmicro/Documents/cyberpunk2077_web/militech/templates/admin.html", line 222, in template
+    [TIMESTAMP: {{ "now"|strftime("%H:%M %Z") }}]
+    ^
+jinja2.exceptions.TemplateAssertionError: No filter named 'strftime'.
+03:12:42 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:12:42] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+03:14:29 PM: INFO [app.py:208] 🚀 === MILITECH CORPORATION INICIADO ===
+03:14:29 PM: INFO [app.py:209] 👉 Usuarios: soldado/123, sargento/123
+03:14:29 PM: INFO [app.py:210] 👉 Sargento puede ir a /admin
+03:14:29 PM: INFO [_internal.py:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.0.6:5000
+03:14:29 PM: INFO [_internal.py:97] [33mPress CTRL+C to quit[0m
+03:14:29 PM: INFO [_internal.py:97]  * Restarting with stat
+03:14:29 PM: INFO [app.py:208] 🚀 === MILITECH CORPORATION INICIADO ===
+03:14:29 PM: INFO [app.py:209] 👉 Usuarios: soldado/123, sargento/123
+03:14:29 PM: INFO [app.py:210] 👉 Sargento puede ir a /admin
+03:14:29 PM: WARNING [_internal.py:97]  * Debugger is active!
+03:14:29 PM: INFO [_internal.py:97]  * Debugger PIN: 129-694-163
+03:14:46 PM: INFO [app.py:145] → Página principal
+03:14:46 PM: INFO [app.py:49] load_user llamado para: sargento
+03:14:46 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:46] "GET / HTTP/1.1" 200 -
+03:14:46 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:14:46 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:14:50 PM: INFO [app.py:49] load_user llamado para: sargento
+03:14:50 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:14:50 PM: INFO [app.py:187] → Zona Sargento: Sargento Primero
+03:14:50 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:50] "GET /sargento HTTP/1.1" 200 -
+03:14:50 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:14:53 PM: INFO [app.py:49] load_user llamado para: sargento
+03:14:53 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:14:53 PM: INFO [app.py:187] → Zona Sargento: Sargento Primero
+03:14:53 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:53] "GET /sargento HTTP/1.1" 200 -
+03:14:53 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:14:55 PM: INFO [app.py:49] load_user llamado para: sargento
+03:14:55 PM: INFO [app.py:193] → Logout: Sargento Primero
+03:14:55 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:55] "[32mGET /logout HTTP/1.1[0m" 302 -
+03:14:55 PM: INFO [app.py:145] → Página principal
+03:14:55 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:55] "GET / HTTP/1.1" 200 -
+03:14:56 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:14:56 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:14:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:15:00 PM: INFO [app.py:151] → Login page
+03:15:00 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:00] "GET /login HTTP/1.1" 200 -
+03:15:00 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:15:07 PM: INFO [app.py:151] → Login page
+03:15:07 PM: INFO [app.py:157] Login intento: sargento
+03:15:07 PM: INFO [app.py:163] ✅ LOGIN OK: Sargento Primero (Rango 2)
+03:15:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+03:15:07 PM: INFO [app.py:49] load_user llamado para: sargento
+03:15:07 PM: INFO [app.py:175] → Dashboard: Sargento Primero
+03:15:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:07] "GET /dashboard HTTP/1.1" 200 -
+03:15:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:15:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:15:14 PM: INFO [app.py:49] load_user llamado para: sargento
+03:15:14 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:15:14 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:14] "GET /admin HTTP/1.1" 200 -
+03:15:14 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:15:14 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:15:34 PM: INFO [app.py:49] load_user llamado para: sargento
+03:15:34 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:15:34 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:34] "[32mPOST /admin/actualizar/soldado HTTP/1.1[0m" 302 -
+03:15:34 PM: INFO [app.py:49] load_user llamado para: sargento
+03:15:34 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:15:34 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:34] "GET /admin HTTP/1.1" 200 -
+03:15:34 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:15:34 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:15:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:16:07 PM: INFO [app.py:49] load_user llamado para: sargento
+03:16:07 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:16:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:07] "[32mPOST /admin/crear HTTP/1.1[0m" 302 -
+03:16:07 PM: INFO [app.py:49] load_user llamado para: sargento
+03:16:07 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:16:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:07] "GET /admin HTTP/1.1" 200 -
+03:16:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:16:07 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:16:19 PM: INFO [app.py:49] load_user llamado para: sargento
+03:16:19 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:16:19 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:19] "GET /admin HTTP/1.1" 200 -
+03:16:19 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:16:28 PM: INFO [app.py:49] load_user llamado para: sargento
+03:16:28 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:16:28 PM: INFO [app.py:187] → Zona Sargento: Sargento Primero
+03:16:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:28] "GET /sargento HTTP/1.1" 200 -
+03:16:28 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:16:40 PM: INFO [app.py:49] load_user llamado para: sargento
+03:16:40 PM: INFO [app.py:175] → Dashboard: Sargento Primero
+03:16:40 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:40] "GET /dashboard HTTP/1.1" 200 -
+03:16:40 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:16:56 PM: INFO [app.py:145] → Página principal
+03:16:56 PM: INFO [app.py:49] load_user llamado para: sargento
+03:16:56 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:56] "GET / HTTP/1.1" 200 -
+03:16:56 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:16:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:17:01 PM: INFO [app.py:49] load_user llamado para: sargento
+03:17:01 PM: INFO [app.py:62] Chequeo rango 2+ para sargento (rango 2)
+03:17:01 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:01] "GET /admin HTTP/1.1" 200 -
+03:17:01 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:17:12 PM: INFO [app.py:49] load_user llamado para: sargento
+03:17:12 PM: INFO [app.py:193] → Logout: Sargento Primero
+03:17:12 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:12] "[32mGET /logout HTTP/1.1[0m" 302 -
+03:17:12 PM: INFO [app.py:145] → Página principal
+03:17:12 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:12] "GET / HTTP/1.1" 200 -
+03:17:12 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:12] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:17:12 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:17:17 PM: INFO [app.py:151] → Login page
+03:17:17 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:17] "GET /login HTTP/1.1" 200 -
+03:17:17 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:17:23 PM: INFO [app.py:151] → Login page
+03:17:23 PM: INFO [app.py:157] Login intento: soldado2
+03:17:23 PM: WARNING [app.py:167] ❌ Login fallido: soldado2
+03:17:23 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:23] "POST /login HTTP/1.1" 200 -
+03:17:24 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:17:24 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:17:32 PM: INFO [app.py:151] → Login page
+03:17:32 PM: INFO [app.py:157] Login intento: soldado2
+03:17:32 PM: INFO [app.py:163] ✅ LOGIN OK: juan perez (Rango 1)
+03:17:32 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+03:17:32 PM: INFO [app.py:49] load_user llamado para: soldado2
+03:17:32 PM: INFO [app.py:175] → Dashboard: juan perez
+03:17:32 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:32] "GET /dashboard HTTP/1.1" 200 -
+03:17:32 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:17:32 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+03:17:42 PM: INFO [app.py:49] load_user llamado para: soldado2
+03:17:42 PM: INFO [app.py:62] Chequeo rango 1+ para soldado2 (rango 1)
+03:17:42 PM: INFO [app.py:181] → Zona Soldado: juan perez
+03:17:42 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:42] "GET /soldado HTTP/1.1" 200 -
+03:17:42 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:17:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:18:09 PM: INFO [app.py:49] load_user llamado para: soldado2
+03:18:09 PM: INFO [app.py:193] → Logout: juan perez
+03:18:09 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:18:09] "[32mGET /logout HTTP/1.1[0m" 302 -
+03:18:09 PM: INFO [app.py:145] → Página principal
+03:18:09 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:18:09] "GET / HTTP/1.1" 200 -
+03:18:09 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:18:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+03:18:09 PM: INFO [_internal.py:97] 127.0.0.1 - - [24/Feb/2026 15:18:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

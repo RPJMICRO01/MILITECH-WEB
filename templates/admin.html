@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILITECH - PERSONNEL ADMIN [R{{ current_user.rango }}]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* ADMIN SPECIFIC - Compatible con tu styles.css */
+        .admin-container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .terminal-box { 
+            background: rgba(10,10,10,0.95); 
+            border: 2px solid #8b4513; 
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(139, 69, 19, 0.3);
+            backdrop-filter: blur(20px);
+            margin-bottom: 3rem;
+        }
+        .terminal-header {
+            background: linear-gradient(90deg, rgba(139,69,19,0.3), rgba(212,175,55,0.3));
+            padding: 2.5rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+        .terminal-title { 
+            font-family: 'Orbitron', monospace !important; 
+            font-size: 2.8rem !important; 
+            background: linear-gradient(45deg, #d4af37, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin: 0;
+            text-shadow: none;
+        }
+        .terminal-subtitle { 
+            font-family: 'Roboto Mono', monospace !important; 
+            color: #00ff88 !important; 
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            letter-spacing: 2px;
+        }
+        .admin-section { 
+            background: rgba(15,15,15,0.9); 
+            border: 1px solid #8b4513; 
+            border-left: 4px solid #d4af37;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-title-admin {
+            font-family: 'Orbitron', monospace;
+            color: #d4af37 !important;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .section-title-admin::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #8b4513, #d4af37);
+        }
+        .form-group { margin-bottom: 1.8rem; }
+        .form-control-admin { 
+            width: 100%; 
+            padding: 1.2rem 1.5rem; 
+            background: rgba(20,20,20,0.8); 
+            border: 1px solid #666; 
+            color: #e0e0e0; 
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .form-control-admin:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        .btn-admin { 
+            background: linear-gradient(45deg, #d4af37, #8b4513); 
+            color: #000 !important; 
+            border: none; 
+            padding: 1.2rem 2.5rem; 
+            font-family: 'Orbitron', monospace !important; 
+            font-weight: 700 !important;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-admin:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        .soldier-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .soldier-card { 
+            background: rgba(20,20,20,0.8); 
+            border: 1px solid #666; 
+            border-left: 4px solid #00ff88;
+            padding: 2rem;
+            border-radius: 0 6px 6px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .soldier-card:hover {
+            border-left-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        .soldier-info h4 {
+            color: #00ff88;
+            font-family: 'Orbitron', monospace;
+            margin-bottom: 0.5rem;
+        }
+        .soldier-meta {
+            color: #888;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .soldier-actions { display: flex; gap: 1rem; }
+        .btn-small { 
+            padding: 0.7rem 1.2rem; 
+            font-size: 0.85rem; 
+            min-width: 80px;
+        }
+        .btn-update { background: linear-gradient(45deg, #00aa88, #008866); color: white !important; }
+        .btn-delete { background: linear-gradient(45deg, #cc4444, #aa2222); color: white !important; }
+        .stats-bar {
+            background: rgba(139,69,19,0.2);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .stats-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            color: #d4af37;
+            font-weight: 900;
+        }
+        .flash-message {
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 6px;
+            border-left: 5px solid;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .flash-success { border-left-color: #00ff88; background: rgba(0,255,136,0.15); color: #00ff88; }
+        .flash-error { border-left-color: #ff4444; background: rgba(255,68,68,0.15); color: #ff4444; }
+        @media (max-width: 768px) {
+            .soldier-card { flex-direction: column; gap: 1rem; text-align: center; }
+            .soldier-actions { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- GEOMETRÍA DE FONDO (tu CSS) -->
+    <div class="geo-bg">
+        <div class="geo-hex1"></div>
+        <div class="geo-hex2"></div>
+        <div class="geo-tri1"></div>
+        <div class="geo-circle1"></div>
+    </div>
+
+    <div class="page-wrapper">
+        <!-- HEADER (tu CSS exacto) -->
+        <header class="header-section">
+            <div class="container">
+                <div class="militech-logo">MILITECH</div>
+                <div class="center-nav-group">
+                    <h1 class="division-title">ADMIN TERMINAL [R{{ current_user.rango }}]</h1>
+                    <nav class="main-nav">
+                        <a href="{{ url_for('dashboard') }}" class="nav-link">[DASHBOARD]</a>
+                        <a href="{{ url_for('zona_sargento') }}" class="nav-link">[SARGENTO]</a>
+                        <a href="{{ url_for('admin') }}" class="nav-link active">[ADMIN]</a>
+                        <a href="{{ url_for('logout') }}" class="nav-link">[LOGOUT]</a>
+                    </nav>
+                </div>
+                <div class="security-badge">[ADMIN-{{ current_user.rango }}] {{ current_user.nombre }}</div>
+            </div>
+            <div class="status-line"></div>
+        </header>
+
+        <div class="admin-container">
+            <!-- FLASH MESSAGES -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message flash-{{ 'success' if category == 'success' else 'error' }}">
+                            <strong>[{{ 'SUCCESS' if category == 'success' else 'ERROR' }}]</strong> {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- TERMINAL HEADER -->
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <h1 class="terminal-title">PERSONNEL MANAGEMENT SYSTEM v2.7</h1>
+                </div>
+            </div>
+
+            <!-- RECLUTAMIENTO -->
+            <section class="admin-section">
+                <h3 class="section-title-admin">[RECRUITMENT TERMINAL]</h3>
+                <form method="POST" action="{{ url_for('admin_crear') }}">
+                    <div class="form-group">
+                        <label style="color: #d4af37; font-family: 'Roboto Mono'; margin-bottom: 0.5rem; display: block;">[PERSONNEL ID]</label>
+                        <input type="text" name="usuario" class="form-control-admin" placeholder="soldado03" required maxlength="20">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #d4af37; font-family: 'Roboto Mono'; margin-bottom: 0.5rem; display: block;">[AUTH CODE]</label>
+                        <input type="password" name="password" class="form-control-admin" placeholder="123456" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #d4af37; font-family: 'Roboto Mono'; margin-bottom: 0.5rem; display: block;">[FULL NAME]</label>
+                        <input type="text" name="nombre" class="form-control-admin" placeholder="Soldado Ramirez J." required maxlength="100">
+                    </div>
+                    <button type="submit" class="btn-admin">[ENLIST PERSONNEL R1]</button>
+                </form>
+            </section>
+
+            <!-- ROSTER SOLDADOS -->
+            <section class="admin-section">
+                <h3 class="section-title-admin">[PERSONNEL ROSTER R1]</h3>
+                <div class="stats-bar">
+                    <div class="stats-number">{{ total_usuarios }}</div>
+                    <div style="color: #888; font-family: 'Roboto Mono';">ACTIVE PERSONNEL [RANK 1]</div>
+                </div>
+                
+                <div class="soldier-grid">
+                    {% for usuario in usuarios %}
+                        {% if usuario.rango == 1 %}
+                        <div class="soldier-card">
+                            <div class="soldier-info">
+                                <h4>{{ usuario.nombre }}</h4>
+                                <div class="soldier-meta">
+                                    [ID: {{ usuario.usuario }}] [RANK: 1] [STATUS: ACTIVE]
+                                </div>
+                            </div>
+                            <div class="soldier-actions">
+                                <form method="POST" action="{{ url_for('admin_actualizar', usuario=usuario.usuario) }}" style="display: inline-block;" title="Update Auth">
+                                    <input type="password" name="password" placeholder="newpass" style="width: 110px; padding: 0.6rem; margin-right: 0.5rem; border: 1px solid #666; border-radius: 3px; background: rgba(20,20,20,0.8); color: #e0e0e0;">
+                                    <button type="submit" class="btn-small btn-update">[UPD]</button>
+                                </form>
+                                <form method="POST" action="{{ url_for('admin_eliminar', usuario=usuario.usuario) }}" style="display: inline-block;" 
+                                      onsubmit="return confirm('¿DESACTIVAR {{ usuario.nombre }}? [Y/N]');">
+                                    <button type="submit" class="btn-small btn-delete">[DEL]</button>
+                                </form>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                {% if total_usuarios == 0 %}
+                    <div style="text-align: center; padding: 3rem; color: #888; font-family: 'Roboto Mono'; font-style: italic;">
+                        [NO PERSONNEL ASSIGNED] - READY FOR RECRUITMENT
+                    </div>
+                {% endif %}
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
