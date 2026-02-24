@@ -1,25 +1,71 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Título de la Página</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILITECH - Autenticación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>¡Hola Mundo!</h1>
-    <p>Este es el contenido visible.</p>
-    {% block content %}
-    	<form method="post">
-		<div>
-			<input type="text" name="user" placeholder="user">
-		</div>
-		<div>
-			<input type="password" name="password" placeholder="Password">
-		</div>
-		<div>
-			<button>sign up</button>
-		</div>
-    	</form>
-    {% endblock %}
+    <!-- GEOMETRÍA DE FONDO (igual que index) -->
+    <div class="geo-bg">
+        <div class="geo-hex1"></div>
+        <div class="geo-hex2"></div>
+        <div class="geo-tri1"></div>
+        <div class="geo-circle1"></div>
+    </div>
+
+    <header class="header-section">
+        <div class="container">
+            <div class="header-content">
+                <div class="militech-logo">MILITECH</div>
+                <div class="security-badge">[AUTH TERMINAL]</div>
+            </div>
+            <div class="status-line"></div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 6rem 0;">
+        <div class="grid" style="max-width: 700px; margin: 0 auto; grid-template-columns: 1fr;">
+            <div class="card" style="border-left: 5px solid #d4af37;">
+                <h1 style="font-family: 'Orbitron', monospace; font-size: 3rem; background: linear-gradient(45deg, #d4af37, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem;">
+                    {% if current_user.is_authenticated %}
+                        {{ current_user.nombre }}
+                    {% else %}
+                        TERMINAL DE AUTENTIFICACIÓN
+                    {% endif %}
+                </h1>
+                
+                {% if current_user.is_authenticated %}
+                    <div class="product-code" style="margin-bottom: 1.5rem;">[R{{ current_user.rango }}]</div>
+                    <p style="font-family: 'Roboto Mono', monospace; color: #00ff88; font-size: 1.1rem;">
+                        Rango: {{ "SOLDADO" if current_user.rango == 1 else "SARGENTO" }}
+                    </p>
+                    <a href="{{ url_for('dashboard') }}" class="nav-link" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: linear-gradient(45deg, #d4af37, #8b4513); color: #000; font-weight: 700; border-radius: 4px; font-size: 1.1rem;">[ACCEDER DASHBOARD]</a>
+                {% endif %}
+            </div>
+
+            {% if not current_user.is_authenticated %}
+            <div class="card" style="border-left: 5px solid #ff4444;">
+                <div class="product-code">[AUTH-SECURE]</div>
+                <form method="POST" style="margin-top: 2rem;">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label style="color: #d4af37; font-weight: 700; display: block; margin-bottom: 0.5rem;">IDENTIFICACIÓN</label>
+                        {{ form.username(class="form-group", style="width: 100%; padding: 1rem; background: rgba(20,20,20,0.8); border: 2px solid #8b4513; border-radius: 4px; color: #e0e0e0; font-family: 'Roboto Mono', monospace; font-size: 1rem;") }}
+                    </div>
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label style="color: #d4af37; font-weight: 700; display: block; margin-bottom: 0.5rem;">CÓDIGO DE ACCESO</label>
+                        {{ form.password(class="form-group", style="width: 100%; padding: 1rem; background: rgba(20,20,20,0.8); border: 2px solid #8b4513; border-radius: 4px; color: #e0e0e0; font-family: 'Roboto Mono', monospace; font-size: 1rem;") }}
+                    </div>
+                    {{ form.submit(class="nav-link", style="display: block; width: 100%; margin-top: 1rem; padding: 1.2rem; background: linear-gradient(45deg, #d4af37, #8b4513); color: #000; font-weight: 900; font-family: 'Orbitron', monospace; font-size: 1rem; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px;") }}
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </main>
 </body>
 </html>
 

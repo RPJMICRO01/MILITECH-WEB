@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONA SOLDADO - MILITECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="geo-bg">
+        <div class="geo-hex1"></div>
+        <div class="geo-hex2"></div>
+        <div class="geo-tri1"></div>
+        <div class="geo-circle1"></div>
+    </div>
+
+    <header class="header-section">
+        <div class="container">
+            <div class="header-content">
+                <div class="militech-logo">MILITECH</div>
+                <nav class="main-nav">
+                    <a href="{{ url_for('dashboard') }}" class="nav-link">[DASHBOARD]</a>
+                    <a href="{{ url_for('logout') }}" class="nav-link">[LOGOUT]</a>
+                </nav>
+                <div class="security-badge">[SOLDADO {{ user.rango }}] {{ user.nombre }}</div>
+            </div>
+            <div class="status-line"></div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 0;">
+        <section class="hero-banner" style="padding: 6rem 0;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" style="font-size: 4rem;">ZONA SOLDADO</h1>
+                    <div class="security-class">[R{{ user.rango }} CLEARANCE]</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid" style="max-width: 1200px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+            
+            <!-- MISIÓN ACTUAL -->
+            <div class="card" style="border-left: 5px solid #00ff88;">
+                <div class="product-code">[PAT-001]</div>
+                <h2 style="color: #00ff88;">PATrULLA PERIMETRAL</h2>
+                <p style="font-family: 'Roboto Mono', monospace;">
+                    • Sector 7 - Reconocimiento visual<br>
+                    • Reportar movimiento sospechoso<br>
+                    • Mantener posición hasta 2200HRS
+                </p>
+                <p style="margin-top: 1rem;"><strong>Rancagua HQ:</strong> -34.1707, -70.7418</p>
+            </div>
+
+            <!-- SENSORES -->
+            <div class="card" style="border-left: 5px solid #d4af37;">
+                <div class="product-code">[SENSORS]</div>
+                <h3 style="color: #d4af37;">SISTEMAS PERIMETRALES</h3>
+                <div style="margin-top: 1.5rem;">
+                    <p><strong>Sensor 01:</strong> <span style="color: #00ff88;">ACTIVO</span> | 23.4°C</p>
+                    <p><strong>Sensor 07:</strong> <span style="color: #ff4444;">ALERTA</span> | Movimiento detectado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÓN REPORTE SIMPLE (SIN FORM) -->
+        <div class="container" style="max-width: 600px; margin: 4rem auto;">
+            <div class="card" style="border-left: 5px solid #ff4444;">
+                <div class="product-code">[REPORT]</div>
+                <h3 style="color: #ff4444;">REPORTE RÁPIDO</h3>
+                <p>Estado actual: <strong>MOVIMIENTO SECTOR 7</strong></p>
+                <p><em>Reporte simulado - ESP32 real próximamente</em></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">[ZONA SOLDADO]</div>
+                <div class="footer-security">[PATrULLA ACTIVA]</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

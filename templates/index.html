@@ -1,13 +1,122 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILITECH INTERNATIONAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-  <!-- your web page content goes here -->
+    <!-- GEOMETRÍA DE FONDO -->
+    <div class="geo-bg">
+        <div class="geo-hex1"></div>
+        <div class="geo-hex2"></div>
+        <div class="geo-tri1"></div>
+        <div class="geo-circle1"></div>
+    </div>
+
+    <div class="page-wrapper">
+        <!-- HEADER MILITECH -->
+        <header class="header-section">
+            <div class="container">
+                <div class="militech-logo">MILITECH</div>
+                <div class="center-nav-group">
+                    {% if current_user.is_authenticated %}
+                        <h1 class="division-title">SECURE TERMINAL {{ current_user.rango }}</h1>
+                        <nav class="main-nav">
+                            <a href="{{ url_for('dashboard') }}" class="nav-link">[DASHBOARD]</a>
+                            {% if current_user.rango >= 1 %}
+                                <a href="{{ url_for('zona_soldado') }}" class="nav-link">[SOLDADO]</a>
+                            {% endif %}
+                            {% if current_user.rango >= 2 %}
+                                <a href="{{ url_for('zona_sargento') }}" class="nav-link">[SARGENTO]</a>
+                            {% endif %}
+                        </nav>
+                    {% else %}
+                        <h1 class="division-title">ARMAMENTS DIVISION</h1>
+                        <nav class="main-nav">
+                            <a href="{{ url_for('login') }}" class="nav-link">[AUTH]</a>
+                            <a href="#mission" class="nav-link">[MISSION]</a>
+                            <a href="#intel" class="nav-link">[INTEL]</a>
+                        </nav>
+                    {% endif %}
+                </div>
+                <div class="security-badge">
+                    {% if current_user.is_authenticated %}
+                        [R{{ current_user.rango }}] {{ current_user.nombre }}
+                    {% else %}
+                        [SEC-LVL 3]
+                    {% endif %}
+                </div>
+            </div>
+            <div class="status-line"></div>
+        </header>
+
+        <!-- HERO MILITAR -->
+        <section class="hero-banner">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">MILITECH INTERNATIONAL</h2>
+                    <p class="hero-subtitle">Global Defense Contractor</p>
+                    <div class="security-class">[CLASSIFIED // NOFORN]</div>
+                    
+                    {% if current_user.is_authenticated %}
+                        <div style="margin-top: 3rem;">
+                            <p style="font-family: 'Roboto Mono', monospace; font-size: 1.2rem; margin-bottom: 1rem;">
+                                👤 OPERADOR: {{ current_user.nombre }}
+                            </p>
+                            <p style="font-family: 'Roboto Mono', monospace; color: #00ff88;">
+                                RANGO: {{ "SOLDADO" if current_user.rango == 1 else "SARGENTO" }}
+                            </p>
+                            <a href="{{ url_for('dashboard') }}" class="nav-link" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: linear-gradient(45deg, #d4af37, #8b4513); color: #000; font-weight: 700; border-radius: 4px;">[ACCEDER DASHBOARD]</a>
+                        </div>
+                    {% else %}
+                        <div style="margin-top: 3rem;">
+                            <a href="{{ url_for('login') }}" class="nav-link" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: linear-gradient(45deg, #d4af37, #8b4513); color: #000; font-weight: 700; border-radius: 4px; font-size: 1.1rem;">🔑 [ACCESO MILITAR]</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        {% if not current_user.is_authenticated %}
+        <!-- WEAPON SYSTEMS (solo público) -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h3 class="section-title">WEAPON SYSTEMS</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-code">[M-47A]</div>
+                        <h4>ASSAULT RIFLE</h4>
+                        <p>Smartgun platform. Neural interface.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-code">[MT-EXO]</div>
+                        <h4>EXO-SUIT MK-IV</h4>
+                        <p>Powered exoskeleton. AV integrated.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-code">[DRN-12]</div>
+                        <h4>COMBAT DRONE</h4>
+                        <p>Hunter-killer. EMP hardened.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- FOOTER -->
+        <footer class="corp-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">[MILITECH © 2077]</div>
+                    <div class="footer-security">[MONITORED]</div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
 

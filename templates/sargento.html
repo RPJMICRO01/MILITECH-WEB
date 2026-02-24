@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONA SOLDADO - MILITECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- GEOMETRÍA DE FONDO CYBERPUNK -->
+    <div class="geo-bg">
+        <div class="geo-hex1"></div>
+        <div class="geo-hex2"></div>
+        <div class="geo-tri1"></div>
+        <div class="geo-circle1"></div>
+    </div>
+
+    <!-- HEADER SOLDADO -->
+    <header class="header-section">
+        <div class="container">
+            <div class="header-content">
+                <div class="militech-logo">MILITECH</div>
+                <nav class="main-nav">
+                    <a href="{{ url_for('dashboard') }}" class="nav-link">[DASHBOARD]</a>
+                    {% if user.rango >= 2 %}
+                        <a href="{{ url_for('zona_sargento') }}" class="nav-link">[SARGENTO]</a>
+                    {% endif %}
+                    <a href="{{ url_for('logout') }}" class="nav-link">[LOGOUT]</a>
+                </nav>
+                <div class="security-badge">[R{{ user.rango }}] {{ user.nombre }}</div>
+            </div>
+            <div class="status-line"></div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 0;">
+        <!-- TÍTULO ZONA SOLDADO -->
+        <div class="card" style="border-left: 5px solid #00ff88;">
+            <div class="product-code">[SOLDADO-{{ user.id }}]</div>
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem;">ZONA SOLDADO</h1>
+            <div class="security-class">[R{{ user.rango }} CLEARANCE]</div>
+        </div>
+
+        <!-- PANEL PRINCIPAL (IGUAL QUE DASHBOARD) -->
+        <div class="grid" style="max-width: 1200px; margin: 4rem auto 0; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+            
+            <!-- MISIÓN ACTUAL -->
+            <div class="card objective-card" style="border-left: 5px solid #00ff88;">
+                <div class="status-tag">ACTIVA</div>
+                <div class="product-code">[PAT-001]</div>
+                <h3 style="color: #00ff88; margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">PATrULLA PERIMETRAL</h3>
+                <div class="objectives-grid" style="grid-template-columns: 1fr;">
+                    <div class="intel-item">
+                        <h4 style="color: #d4af37; margin-bottom: 1rem;">OBJETIVOS:</h4>
+                        <p style="font-family: 'Roboto Mono', monospace; line-height: 1.8;">
+                            • Sector 7 - Reconocimiento visual<br>
+                            • Reportar movimiento sospechoso<br>
+                            • Mantener posición hasta 2200HRS
+                        </p>
+                    </div>
+                    <div class="extraction-point" style="background: rgba(0,50,0,0.3); border: 1px solid #00ff88;">
+                        <div class="point-code">[HQ-RANCA]</div>
+                        <p><strong>Lat:</strong> -34.1707 | <strong>Lon:</strong> -70.7418</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SENSORES PERIMETRALES -->
+            <div class="card intel-item objective-card" style="border-left: 5px solid #d4af37;">
+                <div class="status-tag">ONLINE</div>
+                <div class="product-code">[SENSORS]</div>
+                <h3 style="color: #d4af37;">SISTEMAS PERIMETRALES</h3>
+                <div class="intel-grid" style="margin-top: 1.5rem;">
+                    <div style="background: rgba(0,50,0,0.3); padding: 1rem; border-radius: 4px; border-left: 3px solid #00ff88; margin-bottom: 1rem;">
+                        <div class="objective-code">[SENSOR-01]</div>
+                        <p><strong>Temp:</strong> 23.4°C | <strong>Mov:</strong> <span style="color: #00ff88;">NEGATIVO</span></p>
+                    </div>
+                    <div style="background: rgba(50,0,0,0.3); padding: 1rem; border-radius: 4px; border-left: 3px solid #ff4444;">
+                        <div class="objective-code">[SENSOR-07]</div>
+                        <p><strong>Temp:</strong> 25.1°C | <strong>Mov:</strong> <span style="color: #ff4444;">POSITIVO</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REPORTE RÁPIDO -->
+        <div class="grid" style="max-width: 600px; margin: 4rem auto 0; grid-template-columns: 1fr;">
+            <div class="card objective-card" style="border-left: 5px solid #ff4444;">
+                <div class="status-tag">PENDIENTE</div>
+                <div class="product-code">[FIELD-REPORT]</div>
+                <h3 style="color: #ff4444;">REPORTE DE CAMPO</h3>
+                <p style="font-family: 'Roboto Mono', monospace;">
+                    <strong>Estado:</strong> Movimiento detectado Sector 7<br>
+                    <strong>Hora:</strong> 20:47 | <strong>Acción:</strong> Observar y reportar
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">[ZONA SOLDADO v1.2]</div>
+                <div class="footer-security">[PATrULLA ACTIVA]</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
